@@ -1,2 +1,3 @@
 websocket_server
 websocket_client
+redis
