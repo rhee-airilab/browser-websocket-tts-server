@@ -3,6 +3,7 @@
 from getlogger import getLogger; logger = getLogger(__name__)
 import json
 from websocket import create_connection
+from config import tts_ws
 
 """
 requirements:
@@ -16,7 +17,7 @@ def create_ws_sender(args):
     """
     """
 
-    ws_url = 'ws://{:s}:{:d}/'.format(args.host,args.port)
+    ws_url = tts_ws # 'ws://{:s}:{:d}/'.format(args.host,args.port)
 
     def ws_send(msg_dict, ws=None):
         ws_ = ws if ws else create_connection(ws_url)
