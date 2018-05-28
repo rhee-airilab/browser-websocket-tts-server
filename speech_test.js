@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    var websocket_url = 'ws://127.0.0.1:3000';
+    //var websocket_url = 'ws://127.0.0.1:3000';
+    var websocket_url = 'ws://10.100.1.152:3000';
 
     var v = window.speechSynthesis.getVoices();
 
