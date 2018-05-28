@@ -17,14 +17,14 @@ from websocket import create_connection
 from user_names import name_dict
 from sentences import sentences_map
 
+from config import cfg_redis,tts_channel,tts_ws
+
 def ws_tts():
-    #redis_conn = redis.StrictRedis(host='airi3.local',port=6379);
-
-    redis_conn = redis.StrictRedis(host='127.0.0.1',port=6379);
+    redis_conn = redis.StrictRedis(**cfg_redis);
     pub = redis_conn.pubsub()
-    pub.subscribe('tts2')
+    pub.subscribe(tts_channel)
 
-    ws_url = 'ws://{:s}:{:d}/'.format('127.0.0.1',3000)
+    ws_url = tts_ws #'ws://{:s}:{:d}/'.format('127.0.0.1',3000)
 
     def ws_send(msg_dict, ws=None):
         ws_ = ws if ws else create_connection(ws_url)
