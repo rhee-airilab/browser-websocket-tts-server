@@ -1,0 +1,11 @@
+{
+  "name": "web-tts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "http://10.100.1.154/rhee/web-tts.git",
+  "author": "Sang-H RHEE <rhee@airi.kr>",
+  "license": "MIT",
+  "dependencies": {
+    "static-server": "^2.2.1"
+  }
+}
